@@ -32,6 +32,8 @@ mkdir -p /Users/didi/Desktop/Disk/
 # mount new disk
 sudo mount_ntfs -o rw,nobrowse $DISK_PATH ~/Desktop/Disk/
 
+
+
 if [ $? -eq 0 ]; then 
 	echo "###########################################"
 	echo "#                 挂载成功                #"
@@ -40,5 +42,7 @@ if [ $? -eq 0 ]; then
 fi
 
 open ~/Desktop/Disk/
-#cd /Users/didi/DiskBox/
-#find . -exec xattr -c {}\;
+
+# remove Finder attribute info
+cd ~/Desktop/Disk/
+find . -exec xattr -c {} \;
