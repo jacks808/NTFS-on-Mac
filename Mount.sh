@@ -42,7 +42,3 @@ if [ $? -eq 0 ]; then
 fi
 
 open ~/Desktop/Disk/
-
-# remove Finder attribute info
-cd ~/Desktop/Disk/
-find . -exec xattr -c {} \;
